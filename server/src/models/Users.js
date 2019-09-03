@@ -1,5 +1,5 @@
 const mongoose=require('mongoose')
-const { Schema, Model} =mongoose
+const { Schema, model} =mongoose
 
 const user=new Schema({
 
@@ -10,12 +10,15 @@ const user=new Schema({
     email:{
         type:String,
         required:true,
+        unique:true,
+    },
+    pass:{
+        type:String,
+        required:true,
     },
     bio:String,
-    timestamp:{
-        timestamp:true,
-        default:Date.now
-    }
-})
+    connect:Boolean,
+    
+},{timestamps:true,})
 
-module.exports=Model('Users',user)
+module.exports=model('Users',user)

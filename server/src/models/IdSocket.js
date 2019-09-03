@@ -1,22 +1,19 @@
 const mongoose=require('mongoose')
-const { Schema, Model} =mongoose
+const { Schema, model} =mongoose
 
 const IdSocket=new Schema({
 
-    user:{
+    email:{
         type:String,
         required:true,
+        unique:true,
     },
     socketid:{
         type:String,
         required:true,        
     },
-    timestamp:{
-        timestamp:true,
-        default:Date.now
-    }
 
-})
+},{timestamps:true,})
 
 
-module.exports=Model('IdSockets',IdSocket)
+module.exports=model('IdSockets',IdSocket)
