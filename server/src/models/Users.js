@@ -22,3 +22,5 @@ const user=new Schema({
 },{timestamps:true,})
 
 module.exports=model('Users',user)
+
+as
