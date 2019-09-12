@@ -43,3 +43,4 @@ app.use(express.json())
 app.use(cors())
 app.use(Routes)
 
+server.listen(process.env.PORT || 5000)
